@@ -1,0 +1,331 @@
+/* SPAN TAGS FOR SYNTAX COLORING */
+
+:root
+{
+    --fs_span: 25px;
+}
+
+.Keyword
+{
+    color: #f4d37b;
+    font-size: var(--fs_span);
+       
+}
+
+.Argument
+{
+    color: #479fe1;
+    font-size: var(--fs_span);  
+}
+
+.String
+{
+    color: #70c501;
+    font-size: var(--fs_span);
+}
+
+.Variable
+{
+    color: #fa32c8;
+    font-size: var(--fs_span);
+}
+
+.Double
+{
+    color: #01bf78;
+    font-size: var(--fs_span);
+}
+
+.Bool
+{
+    color: #9a49ec;
+    font-size: var(--fs_span);
+}
+
+.Label
+{
+    color: #fa5f58;
+    font-size: var(--fs_span);
+}
+
+.Operator
+{
+    color: #fa5f58;
+    font-size: var(--fs_span);
+}
+
+.Terminator
+{
+    color: #f29901;
+    font-size: var(--fs_span);
+}
+
+.Newline
+{
+    color: #f29901;
+    font-size: var(--fs_span);
+}
+
+.Arrow
+{
+    color: #f29901;
+    font-size: var(--fs_span);
+}
+
+.Comment
+{
+    color: #8e8e8e;
+    font-size: var(--fs_span);
+}
+
+.White
+{
+    color: white;
+    font-size: var(--fs_span);
+}
+
+.Gray
+{
+    color: lightgray;
+    font-size: var(--fs_span);
+}
+
+.Explanation
+{
+    color: #9a9a9a;
+    font-size: var(--fs_span);
+}
+
+.CodeBlock
+{
+
+    background: #111;
+    border-left: 4px solid #479fe1;
+    font-family: monospace;
+
+    padding: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    margin-bottom: 5px;
+
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.Break
+{
+    height: 20px;
+}
+
+.WideBreak
+{
+    height: 50px;
+}
+
+/* GLOBAL CSS */
+body
+{
+    background: #1c1c1c;
+}
+
+.LinkAdvancedTopics
+{
+    color: #9a49ec;
+}
+
+.LinkExtensions
+{
+    color: #70c501;
+}
+
+.LinkErrorGuide
+{
+    color: #fa5f58;
+}
+
+.LinkExamplePrograms
+{
+    color: #01bf78;
+}
+
+.Link
+{
+    color: rgb(79, 139, 185);
+}
+
+.Back
+{
+    color: lightgray;
+    font-size: 20px;
+}
+
+.CommandsList .Text, 
+.AdvancedTopics .Text,
+.ChangeLog .Text,
+.ErrorGuide .Text,
+.ExamplePrograms .Text,
+.Extensions .Text
+{
+    margin: 75px;
+    font-family: monospace;
+}
+
+/* INDEX.HTML CSS */
+
+
+.Landing .Text
+{
+    font-family: monospace;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+.Landing .Text .Title
+{
+    color: white;
+    font-size: 40px ;
+}
+
+.Landing .Text .Explanation
+{
+    position: relative;
+    bottom: 70px;
+}
+
+.Landing .Text .NavButtons
+{
+    position: relative;
+    bottom: 20px;
+}
+
+.Landing .Text .NavButtons .CommandsListButton, .Landing .Text .NavButtons .ExtensionsButton, .Landing .Text .NavButtons .ErrorGuideButton, .Landing .Text .NavButtons .AdvancedTopicsButton, .Landing .Text .NavButtons .ChangeLogButton, .Landing .Text .NavButtons .ProgramsButton
+{
+    background-color: #3c3c3c;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    
+    color: white;
+    font-family: inherit;
+    
+    width: 150px;
+    margin: 10px;
+
+    transition: background-color 0.25s ease, width 0.25s ease;
+}
+
+.Landing .Text .NavButtons .CommandsListButton:hover
+{
+    background-color: #479fe1;
+    width: 170px;
+    cursor: pointer;
+}
+
+
+.Landing .Text .NavButtons .ExtensionsButton:hover
+{
+    background-color: #70c501;
+    width: 170px;
+    cursor: pointer;
+}
+
+.Landing .Text .NavButtons .ErrorGuideButton:hover
+{
+    background-color: #fa5f58;
+    width: 170px;
+    cursor: pointer;
+}
+
+.Landing .Text .NavButtons .AdvancedTopicsButton:hover
+{
+    background-color: #9a49ec;
+    width: 170px;
+    cursor: pointer;
+}
+
+.Landing .Text .NavButtons .ChangeLogButton:hover
+{
+    background-color: #f29901;
+    width: 170px;
+    cursor: pointer;
+}
+
+.Landing .Text .NavButtons .ProgramsButton:hover
+{
+    background-color: #01bf78;
+    width: 170px;
+    cursor: pointer;
+}
+
+/* COMMANDSLIST.HTML CSS */
+
+.CommandsList .Text .Title
+{
+    color: #479fe1;
+    font-size: 25px;
+}
+
+/* ADVANCEDTOPICS.HTML CSS */
+
+.AdvancedTopics .Text .Title
+{
+    color: #9a49ec;
+    font-size: 25px;
+}
+
+/* EXTENSIONS.HTML CSS */
+
+.Extensions .Text .Title
+{
+    color: #70c501;
+    font-size: 25px;
+}
+
+/* ERRORGUIDE.HTML CSS */
+
+.ErrorGuide .Text .Title
+{
+    color: #fa5f58;
+    font-size: 25px;
+}
+
+/* EXAMPLEPROGRAMS.HTML CSS */
+
+.ExamplePrograms .Text .Title
+{
+    color: #01bf78;
+    font-size: 25px;
+}
+
+/* CHANGELOG.HTML CSS */
+
+.ChangeLog .Text .Title
+{
+    color: #f29901;
+    font-size: 25px;
+}
+
+.ChangeLog .Text .Gray
+{
+    font-size: 10px;
+}
+
+/* OTHER CSS THINGS */
+.Warning
+{
+    background-color: lightcoral;
+    height: 30px;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 15px;
+    color: white;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 100px;
+}

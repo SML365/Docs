@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Advanced Topics - Direct+ Official Documentation</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="AdvancedTopics">
+            <div class="Text">
+                <div class="Title">
+                    <a href="index.html" class="Back">Back</a> 
+                    <h1>ADVANCED TOPICS</h1>
+                </div>
+
+                <span class="White" id="DoubleDereferencing">Double Dereferencing: </span>
+                <div class="Break"></div>
+
+                <div class="Explanation">You can make variables with the value of another variable, and dereference it up to two times.</div>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">var</span><span class="Argument">(name</span><span class="Operator"> = </span><span class="String">"apple"</span><span class="Argument">)</span>
+                </div>
+                <div class="Explanation">Here, a variable is being created, called "name", with a value of "apple". Now, we can use the variable's value to make a new variable. Let's try it out:</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">var</span><span class="Argument">(</span><span class="Variable">@name</span><span class="Operator"> = </span><span class="Argument">50)</span> 
+                </div>
+                <div class="Explanation">A variable is now made with the value of the variable created previously ("name"). So, a new variable called "apple" was just made with a value of 50.</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">paste</span><span class="Argument">(text</span><span class="String">"</span><span class="Variable">@name</span><span class="String">"</span><span class="Argument">)</span>
+                    <div class="WideBreak"></div>
+                    <div class="Gray">Output: "apple"</div>
+                </div>
+                <div class="Explanation">Dereferencing once turns "@name" into "apple".</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">paste</span><span class="Argument">(text</span><span class="String">"</span><span class="Double">@@name</span><span class="String">"</span><span class="Argument">)</span>
+                    <div class="WideBreak"></div>
+                    <div class="Gray">Output: 50</div>
+                </div>
+                <div class="Explanation">Now, because we're dereferencing twice, "@@name" dereferences into "@apple". On the second dereference, "@apple" turns into 50. This mechanic is useful for making new variables on-the-fly, like when you're coding programming language in Direct+.</div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Direct+ supports only two dereference levels, for both speed and safety. Chances are, you probably won't need any more than two levels. If you accidentally use more than two levels, a <a class="LinkErrorGuide" href="errorguide.html">Variable Reference</a> error will occur.</div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Full Program:</div>
+                <div class="Break"></div>
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">(name</span><span class="Operator"> = </span><span class="String">"apple"</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">(</span><span class="Variable">@name</span><span class="Operator"> = </span><span class="Argument">50)</span> 
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Keyword">paste</span><span class="Argument">(text</span><span class="String">"</span><span class="Variable">@name</span><span class="String">"</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">paste</span><span class="Argument">(text</span><span class="String">"</span><span class="Double">@@name</span><span class="String">"</span><span class="Argument">)</span>
+                    </div>
+                    <div class="WideBreak"></div>
+                    <div class="Gray">Output: "apple"</div>
+                    <div class="Gray">Output: 50</div>
+                </div>
+                <div class="WideBreak"></div>
+
+                <span class="White" id="ImplicitLoops">Implicit Loop Counters</span>
+                <div class="Break"></div>
+
+                <div class="Explanation">Sometimes, Direct+'s implicit loop counter, which is great for simple tasks, isn't enough for custom iteration or non-linear updates. This is why you can simply omit it from the loop and use a custom counter instead.</div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Example (Implicit Counter): </div>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Keyword">loop</span><span class="Argument">(5, i)</span><span class="Operator"> <<</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;paste</span><span class="Argument">(text</span><span class="String">"</span><span class="Variable">@loop:i</span><span class="String">"</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Operator">>></span>
+                    </div>
+                    <div class="WideBreak"></div>
+                    <div class="Gray">Output: 1</div>
+                    <div class="Gray">Output: 2</div>
+                    <div class="Gray">Output: 3</div>
+                    <div class="Gray">Output: 4</div>
+                    <div class="Gray">Output: 5</div>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Example (Explicit Counter): </div>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">(i</span><span class="Operator"> = </span><span class="Argument">0)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">loop</span><span class="Argument">(5)</span><span class="Operator"> <<</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;add</span><span class="Argument">(</span><span class="Variable">@i</span><span class="Argument">, 1</span><span class="Arrow"> => </span><span class="Argument">i)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;paste</span><span class="Argument">(text</span><span class="String">"</span><span class="Variable">@i</span><span class="String">"</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Operator">>></span>
+                    </div>
+                    <div class="WideBreak"></div>
+                    <div class="Gray">Output: 1</div>
+                    <div class="Gray">Output: 2</div>
+                    <div class="Gray">Output: 3</div>
+                    <div class="Gray">Output: 4</div>
+                    <div class="Gray">Output: 5</div>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">You'll notice that the output is the same, and that's because we set up the explicit counter so it works the same way as the implicit one. Try incrementing the counter by 2, decrementing, or starting at a different number, and watch the output change. You can see that this is way more flexible than the implicit version.</div>
+                <div class="WideBreak"></div>
+
+                <span class="White" id="Functions">Parameterized Functions, Namespaces, and Return Values: </span>
+                <div class="Break"></div>
+
+                <div class="Explanation">Most times, when writing a function, you want to include parameters inside of that function. Those parameters can be used to provide additional functionality to that function, as well as make your code cleaner, so you don't have to rely on global variables all the time. The namespaced variables also get deleted upon function end, which is great to save program memory.</div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">To make a function with parameters, you use the standard label syntax, followed by straight brackets and your variable names listed in them, as shown:</div>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <span class="Label">/label_name</span><span class="Argument">[some, parameters, here]</span>
+                </div>
+                <div class="WideBreak"></div>
+                <div class="Explanation">In the example above, three variables are being defined: "some", "parameters", and "here". Now, how do we access their values? Well, that's where namespacing comes in. Since they're part of a function, then they must be prefixed with their parent function's name, as shown:</div>
+
+                <div class="Break"></div>
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Variable">@label_name:some</span>
+                    </div>
+                    <div>
+                        <span class="Variable">@label_name:parameters</span>
+                    </div>
+                    <div>
+                        <span class="Variable">@label_name:here</span>
+                    </div>
+                    <div>
+                        <span class="Explanation">General Example: </span><span class="Variable">@function:variable</span>
+                    </div>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Now that we can get and access variables, it's time to make a result out of them. Extending upon the /return label, you can add a value into it using straight brackets, as shown:</div>
+                <div class="Break"></div> 
+
+                <div class="CodeBlock">
+                    <span class="Label">/return</span><span class="Argument">[something]</span>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Note that only one return value at a time is supported. (Lists can also be returned, just in the form of a variable) Execution of the function immediately stops as soon as /return is found.</div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Example (Unparameterized Function): </div>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">(text</span><span class="Operator"> = </span><span class="String">"hello, world!"</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/print</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Terminator">;</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Label">/print</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;paste</span><span class="Argument">(text</span><span class="String">"<span class="Variable">@text</span>"</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Label">/return</span>
+                    </div>
+                    <div>
+                        <span class="Terminator">;</span>
+                    </div>
+                    <div class="WideBreak"></div>
+                    <div class="Gray">Output: "hello, world!"</div>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Example (Parameterized Function): </div>
+                <div class="Break"></div>
+                
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Keyword">run</span><span class="Argument">(</span><span class="Label">/print</span><span class="Argument">[<span class="String">"hello, world!"</span>])</span>
+                    </div>
+                    <div>
+                        <span class="Terminator">;</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Label">/print</span><span class="Argument">[text]</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;paste</span><span class="Argument">(text</span><span class="String">"<span class="Variable">@print:text</span>"</span><span class="Argument">)</span>
+                    </div>
+                    <div>
+                        <span class="Label">/return</span>
+                    </div>
+                    <div>
+                        <span class="Terminator">;</span>
+                    </div>
+                    <div class="WideBreak"></div>
+                    <div class="Gray">Output: "hello, world!"</div>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">You can see that while the unparameterized version is more clear and explicit, it does have some issues that are fixed by the parameterized version. For example, the fact that the variables are not namespaced is less safe since variable names may conflict, and they're not auto-deleted.</div>
+                <div class="WideBreak"></div>
+
+                <span class="White" id="Modules">Multiple Files, Variable Sharing, and Cross-file Functions:</span>
+                <div class="Break"></div>
+
+                <div class="Explanation">Files in Direct+ share a runtime environment after being imported, but keep logical separation through namespaces and import rules.</div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">To import a file, you run the use() command at the top of your main code file. Don't use any file extensions when importing, just use the base name of the file, as shown:</div>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Gray">main</span>
+                        <div class="Break"></div>
+                    </div>
+                    <span class="Keyword">use</span><span class="Argument">(filename here)</span>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Important things to note: </div>
+                <div class="Explanation">1. Imports can only be nested one level deep. For example, if [main] imports [utils], [utils] can't import any other files.</div>
+                <div class="Explanation">2. Imported variables are automatically namespaced by file. For example, if [utils] defines "x", then it's accessed as @utils:x after importing.</div>
+                <div class="Explanation">3. Each file has its own namespace. Variables with the same name in different files do not conflict.</div>
+                <div class="Explanation">4. Imported variables can't be changed from outside their parent file. If you attempt to change their values from a different file, a <a class="LinkErrorGuide" href="errorguide.html">Namespacing Collision</a> error will occur.</div>
+                <div class="Explanation">5. Think of imports as extended functionality to your main program. They can't directly modify the state of your main program, and you can't directly change anything they do on a code level. Modules just provide more tools for you to use in your programs.</div>
+                <div class="Explanation">6. Importing just adds variables and defines which functions can be accessed from which file. Once again, imports just provide additional functionality to your main file.</div>
+                <div class="Explanation">7. No file extensions are added when naming a file to import. Just use the base name of a file.</div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">To call a function from a different file,  use a label prefixed with its parent file, as shown: </div>
+                <div class="Break"></div>
+                <div class="CodeBlock">
+                    <div class="Gray">main</div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Keyword">run</span><span class="Argument">(<span class="Label">/file:function_name</span>)</span>
+                    </div>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Parameters, return values, and arrow assigment all work normally.</div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">General Example: </div>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <div class="Gray">main</div>
+                    <div class="Break"></div>
+
+
+                    <div>
+                        <span class="Keyword">use</span><span class="Argument">(utils)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">(result)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">run</span><span class="Argument">(<span class="Label">/utils:mul_by_2</span>[5]<span class="Arrow"> => </span>result)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">paste</span><span class="Argument">(text<span class="String">"<span class="Variable">@result</span>"</span>)</span>
+                    </div>
+                    <div>
+                        <span class="Terminator">;</span>
+                    </div>
+                    <div class="WideBreak"></div>
+
+                    <div class="Gray">utils</div>
+                    <div class="Break"></div>
+
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">(result)</span>
+                    </div>
+                    <div>
+                        <span class="Terminator">;</span>
+                    </div>
+                    <div class="Break"></div>
+
+                    <div>
+                        <span class="Label">/mul_by_2</span><span class="Argument">[num]</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;mul</span><span class="Argument">(<span class="Variable">@mul_by_2:num</span>, 2 <span class="Arrow"> => </span>result)</span>
+                    </div>
+                    <div>
+                        <span class="Label">/return</span><span class="Argument">[<span class="Variable">@result</span>]</span>
+                    </div>
+                    <div>
+                        <span class="Terminator">;</span>
+                    </div>
+
+                    <div class="WideBreak"></div>
+                    <div class="Gray">Output: 10</div>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Places to visit next:</div>
+                <div class="Explanation"><a class="Link" href="commandslist.html">Commands List</a></div>
+                <div class="Explanation"><a class="LinkErrorGuide" href="errorguide.html">Error Guide</a></div>
+                <div class="Explanation"><a class="LinkExtensions" href="extensions.html">Extensions</a></div>
+                <div class="Explanation"><a class="LinkExamplePrograms" href="exampleprograms.html">Example Programs</a></div>
+            </div>
+        </div>
+    </body>
+</html>

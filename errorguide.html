@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Error Guide - Direct+ Official Documentation</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="ErrorGuide">
+            <div class="Text">
+                <div class="Title">
+                    <a href="index.html" class="Back">Back</a> 
+                    <h1>ERROR GUIDE</h1>
+
+                    <span class="White" id="ErrorFormat">Error Format: </span>
+                    <div class="Break"></div>
+
+                    <div class="CodeBlock">
+                        <div>
+                            <span class="Gray">error: [message] in line [#]</span>
+                        </div>
+                        <div>
+                            <span class="Gray">> line preview</span>
+                        </div>
+                        <div class="Break"></div>
+                        <div>
+                            <span class="Gray">stack trace</span>
+                        </div>
+                        <div class="Break"></div>
+                        <div>
+                            <span class="Gray">[space] to exit</span>
+                        </div>
+                    </div>
+                    <div class="WideBreak"></div>
+
+                    <span class="White" id="ExampleError">Example Error: </span>
+                    <div class="Break"></div>
+
+                    <div class="CodeBlock">
+                        <div>
+                            <span class="Gray">error: invalid token in line 6</span>
+                        </div>
+                        <div>
+                            <span class="Gray">expected {num}, got {str}</span>
+                        </div>
+                        <div>
+                            <span class="Gray">> add("apple", 2 => result)</span>
+                        </div>
+                        <div class="Break"></div>
+                        <div>
+                            <span class="Gray">stack trace:</span>
+                        </div>
+                        <div>
+                            <span class="Gray">/main</span>
+                        </div>
+                        <div class="Break"></div>
+                        <div>
+                            <span class="Gray">[space] to exit</span>
+                        </div>
+                    </div>
+                    <div class="WideBreak"></div>
+
+                    <span class="White" id="Miscellaneous">Miscellaneous: </span>
+                    <div class="Break"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Gray">program finished without errors</span>
+                    </div>
+                    <div class="Explanation">No errors were found during execution.</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Gray">system exit</span>
+                    </div>
+                    <div class="Explanation">console(exit) was ran.</div>
+                    <div class="WideBreak"></div>
+
+                    <span class="White" id="SyntaxErrors">Syntax Errors: </span>
+                    <div class="Break"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Gray">no termination statement found</span>
+                    </div>
+                    <div class="Explanation">The interpreter couldn't find a termination statement to signal that the code ended.</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Gray">uneven amount of braces</span>
+                    </div>
+                    <div class="Explanation">The amount of opening braces is not equal to the amount of closing braces.</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Gray">invalid file</span>
+                    </div>
+                    <div class="Explanation">A file that doesn't exist was trying to be imported.</div>
+                    <div class="WideBreak"></div>
+
+                    <span class="White" id="RuntimeErrors">Runtime Errors: </span>
+                    <div class="Break"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Gray">parsing overflow</span>
+                    </div>
+                    <div class="Explanation">The interpreter's overflow counter is greater than 200. This happens if the interpreter is searching for a specific token but enters an infinite loop due to the token not existing. This error is thrown as a last resort if the command is recognized but malformed. (For example, not enough parameters were present in the command)</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Gray">missing parentheses</span>
+                    </div>
+                    <div class="Explanation">A command doesn't contain the same amount of opening and closing parentheses.</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Gray">missing opening brace<span class="Explanation"> / </span>missing closing brace</span>
+                    </div>
+                    <div class="Explanation">You forgot to include a opening or closing brace in an if statement or loop block. This acts as additional protection from crashes if you have an even but malformed amount of braces.</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Gray">missing arrow assignment</span>
+                    </div>
+                    <div class="Explanation">A command that requires arrow assignment doesn't contain proper arrow assignment syntax.</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Gray">undefined variable</span>
+                    </div>
+                    <div class="Explanation">A variable that doesn't exist was referenced.</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Gray">invalid token</span>
+                        <div></div>
+                        <span class="Gray">expected {token}, got {token}</span>
+                    </div>
+                    <div class="Explanation">The interpreter received an unexpected token in a command.</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Gray">invalid save slot</span>
+                        <div></div>
+                    </div>
+                    <div class="Explanation">You tried to save to or load from an invalid slot.</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Gray">namespacing collision</span>
+                        <div></div>
+                    </div>
+                    <div class="Explanation">You directly tried to edit a scoped variable, such as a function's parameter or a loop counter. This protects scoped variables from being modified outside their intended context.</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Gray">invalid syntax</span>
+                        <div></div>
+                    </div>
+                    <div class="Explanation">A command couldn't be recognized.</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Gray">can't nest file calls</span>
+                        <div></div>
+                    </div>
+                    <div class="Explanation">You tried to call a function from another file which calls its own function. Calls from multiple files have a stack depth limit of 1.</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Gray">invalid variable nesting level</span>
+                        <div></div>
+                    </div>
+                    <div class="Explanation">You tried to nest a variable reference more than two levels deep, such as @@@apple.</div>
+                    <div class="WideBreak"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Gray">lists are different lengths</span>
+                        <div></div>
+                    </div>
+                    <div class="Explanation">You tried to perform a list operation on a non-list command (add/sub/mul/div/mod/sqrt/random/concat) but the input lists were not the same length. </div>
+                    <div class="WideBreak"></div>
+
+                    <span class="White" id="StackTraces">Reading Stack Traces: </span>
+                    <div class="Break"></div>
+
+                    <div class="CodeBlock">
+                        <span class="Gray">stack trace: </span>
+                        <div class="Break"></div>
+                        <span class="Gray">/main</span><span class="Explanation"> (This is where your code starts) </span>
+                        <div></div>
+                        <span class="Gray">&gt; /some_function [9]</span><span class="Explanation"> (Jump to '/some_function' in line 9)</span>
+                        <div></div>
+                        <span class="Gray">&ensp;&lt; run(/some_function) [3]</span><span class="Explanation"> (Return to 'run(/some_function)' in line 3)</span>
+                        <div class="Break"></div>
+                        <span class="Explanation">If the line number shows [module] instead, that means that your code jumped to a function outside the main file.</span>
+                    </div>
+                    <div class="WideBreak"></div>
+
+                    <div class="Explanation">Places to visit next:</div>
+                    <div class="Explanation"><a class="Link" href="commandslist.html">Commands List</a></div>
+                    <div class="Explanation"><a class="LinkAdvancedTopics" href="advancedtopics.html">Advanced Topics</a></div>
+                    <div class="Explanation"><a class="LinkExtensions" href="extensions.html">Extensions</a></div>
+                    <div class="Explanation"><a class="LinkExamplePrograms" href="exampleprograms.html">Example Programs</a></div>
+                    </div>
+            </div>
+        </div>
+    </body>
+</html>

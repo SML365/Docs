@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Commands List - Direct+ Official Documentation</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="CommandsList">
+            <div class="Text">
+                <a href="index.html" class="Back">Back</a> 
+                <div class="Title">
+                    <h1>COMMANDS LIST</h1>
+                </div>
+
+                <span class="White" id="TokenGuide">Execution Rules:</span>
+                <div class="Break"></div>
+
+                <div class="Explanation">1. Direct+ programs start at line 1 and execute top to bottom, unless told to jump somewhere else using the run() system. (More on that below)</div>
+                <div class="Explanation">2. Termination statements immediately stop program execution (Used as a program stop marker)</div>
+
+                <div class="WideBreak"></div>
+                
+                <span class="White" id="TokenGuide">Token Guide:</span>
+                <div class="Break"></div>
+
+                <div class="Explanation">Common Data Types:</div>
+                <div class="Explanation">{num} = Number. (Including floats and integers)</div>
+                <div class="Explanation">{str} = String. (Wrap this in quotes!)</div>
+                <div class="Explanation">{bool} = Boolean value (either true or false)</div>
+                <div class="Explanation">{any} = Any common data type is accepted.</div>
+                <div class="Break"></div>
+                
+                <div class="Explanation">Special data types:</div>
+                <div class="Explanation">{list} = A list, typically referenced through a variable.</div>
+                <div class="Explanation">{table} = Table name.</div>
+                <div class="Explanation">{ref} = run() reference.</div>
+                <div class="Explanation">{slot} = Save/load slot. (1-100 per directory)</div>
+                <div class="Explanation">{file} = A name of a Direct+ file (without the extension).</div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Direct+ is one-indexed, and 0 is reserved for special case operations and is not a valid element index. (Like in lists or as a failure method)</div>
+                <div class="WideBreak"></div>
+
+                <span class="White" id="Miscellaneous">Miscellaneous: </span>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <span class="Terminator">;</span>
+                </div>
+                <div class="Explanation"> Terminates code, can be placed anywhere in your program, even multiple times. This is mandatory and your program can't run without it. For the termination statement to register, it should be placed as the first character in a new line of code.</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Comment">$ comment</span>
+                </div>
+                <div class="Explanation"> Ignored by the interpreter. Useful for documenting code.</div> 
+                <div class="WideBreak"></div>
+
+                <span class="White" id="InputAndOutput">Input and Output: </span>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">paste</span><span class="Argument">(mode)</span></span>
+                </div>
+                <div class="Explanation"> Interacts with the console. Different modes serve different purposes, as shown below: </div> 
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">paste</span><span class="Argument">(text</span><span class="String">"</span><span class="Explanation">{str}</span><span class="String">"</span><span class="Argument">)</span>
+                </div>
+                <div class="Explanation"> Prints {str} onto the console.</div> 
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">paste</span><span class="Argument">(input</span><span class="String">"</span><span class="Explanation">{str}</span><span class="String">"</span><span class="Arrow"> => </span><span class="Argument">destination)</span>
+                </div>
+                <div class="Explanation">Prompts the user with {str} and stores the response.</div> 
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">color</span><span class="Argument">(</span><span class="Explanation">{num}</span><span class="Argument">, </span><span class="Explanation">{num}</span><span class="Argument">, <span class="Explanation">{num}</span></span><span class="Argument">)</span>
+                </div>
+                <div class="Explanation"> Changes the color to hue (0-200), brightness (-100 = black, 100 = white), and transparency (0-100, which acts as saturation since it's not natively supported) respectively. The color will apply to the text until it is changed again. Use 0, 100, 0 to revert back to the standard text.</div> 
+                <div class="WideBreak"></div>
+
+                <span class="White" id="Variables">Variables: </span>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">var</span><span class="Argument">(name</span><span class="Operator"> = </span><span class="Explanation">{any}</span><span class="Argument">)</span>
+                </div>
+                <div class="Explanation"> Creates or updates a variable with the value {any}. You can also define a variable without a value to set it to an empty value. ("") <a class="Link" href="https://en.wikipedia.org/wiki/Snake_case" target="_blank">Snake case</a> recommended.</div> 
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Variable">@variable</span>
+                </div>
+                <div class="Explanation"> References the value of a variable. This can be a substitute for a value in any command as long as the value is the same as the expected type. Use two @'s to double dereference a variable. (See <a class="LinkAdvancedTopics" href="advancedtopics.html#DoubleDereferencing">Advanced Topics</a> for more information)</div> 
+                <div class="WideBreak"></div>
+
+                <span class="White" id="ControlFlow">Control Flow: </span>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">if</span><span class="Argument">(</span><span class="Explanation">{any}</span><span class="Operator"> ==</span><span class="Explanation">/</span><span class="Operator">!=</span><span class="Explanation">/</span><span class="Operator">&gt;</span><span class="Explanation">/</span><span class="Operator">!&gt;</span><span class="Explanation">/</span><span class="Operator">&lt;</span><span class="Explanation">/</span><span class="Operator">!&lt; </span><span class="Explanation">{any}</span><span class="Argument">)</span><span class="Operator"> &lt;&lt;</span>
+                    <div class="Break"></div>
+                    <span class="Operator">&gt;&gt;</span>
+                </div>
+                <div class="Explanation"> Compares two values and runs the code inside if it's true.</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">loop</span><span class="Argument">(</span><span class="Explanation">{num}</span><span class="Argument">)</span><span class="Operator"> &lt;&lt;</span>
+                    <div class="Break"></div>
+                    <span class="Operator">&gt;&gt;</span>
+                </div>
+                <div class="Explanation"> Loops the code {num} times. If {num} is 0, the code loops infinitely. Since the interpreter updates every newline and code can be stopped anytime, infinite loops aren't a safety hazard. Nesting is fully supported with all control flow elements. Use loop({num}, {name}) to automatically create a namespaced counter variable in the loop. (See <a class="LinkAdvancedTopics" href="advancedtopics.html#ImplicitLoops">Advanced Topics</a> for more information)</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">break</span><span class="Argument">()</span>
+                </div>
+                <div class="Explanation"> Exits out of a loop early.</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">run</span><span class="Argument">(</span><span class="Explanation">{ref}</span><span class="Argument">)</span>
+                </div>
+                <div class="Explanation"> Reroutes the interpreter to the specified {ref} (use /reference_name to select a reference). Use /file:function to run a function in another file. The run() system is stack-based, meaning run() chaining is supported along with nesting with all control flow elements. Labels themselves shouldn't be nested. (Nothing really will happen, but it's generally discouraged since that approach just doesn't make sense) These calls can also contain parameters. (See <a class="LinkAdvancedTopics" href="advancedtopics.html">Advanced Topics</a> for more information)</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Operator">/label</span>
+                </div>
+                <div class="Explanation"> A direct reference to parse from, can be named anything. It can also contain parameters. (See <a class="LinkAdvancedTopics" href="advancedtopics.html">Advanced Topics</a> for more information)</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Operator">/return</span>
+                </div>
+                <div class="Explanation"> Returns the parser to the last jump, useful for calling functions multiple times. It can also return values. (See <a class="LinkAdvancedTopics" href="advancedtopics.html">Advanced Topics</a> for more information)</div>
+                <div class="WideBreak"></div>
+
+                <span class="White" id="NumOperations">Number Operations: </span>
+                <div class="Break"></div>
+                
+                <div class="CodeBlock">
+                    <span class="Keyword">add</span><span class="Explanation">/</span><span class="Keyword">sub</span><span class="Explanation">/</span><span class="Keyword">mul</span><span class="Explanation">/</span><span class="Keyword">div</span><span class="Argument">(</span><span class="Explanation">{num}</span><span class="Argument">, </span><span class="Explanation">{num}</span><span class="Arrow"> => </span><span class="Argument">destination)</span>
+                </div>
+                <div class="Explanation"> Performs an arithmetic operation on the two values.</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">sqrt</span><span class="Argument">(</span><span class="Explanation">{num}</span><span class="Arrow"> => </span><span class="Argument">destination)</span>
+                </div>
+                <div class="Explanation"> Returns the square root of the given value.</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">mod</span><span class="Argument">(</span><span class="Explanation">{num}</span><span class="Argument">, </span><span class="Explanation">{num}</span><span class="Arrow"> => </span><span class="Argument">destination)</span>
+                </div>
+                <div class="Explanation"> Returns the remainder of the two values.</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">round</span><span class="Argument">(</span><span class="Explanation">{num}</span><span class="Arrow"> => </span><span class="Argument">destination)</span>
+                </div>
+                <div class="Explanation"> Returns the rounded value.</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">random</span><span class="Argument">(</span><span class="Explanation">{num}</span><span class="Argument">, </span><span class="Explanation">{num}</span><span class="Arrow"> => </span><span class="Argument">destination)</span>
+                </div>
+                <div class="Explanation"> Returns a random number between the two values. (Inclusive)</div>
+                <div class="WideBreak"></div>
+
+                <span class="White" id="StrOperations">String Operations: </span>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">concat</span><span class="Argument">(</span><span class="Explanation">{str}</span><span class="Argument">, </span><span class="Explanation">{str}</span><span class="Arrow"> => </span><span class="Argument">destination)</span>
+                </div>
+                <div class="Explanation">Returns the two values joined together.</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">letter</span><span class="Argument">(</span><span class="Explanation">{num}</span><span class="Argument">, </span><span class="Explanation">{str}</span><span class="Arrow"> => </span><span class="Argument">destination)</span>
+                </div>
+                <div class="Explanation">Returns the specified index {num} of {str}.</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">length</span><span class="Argument">(</span><span class="Explanation">{str} or {list}</span><span class="Arrow"> => </span><span class="Argument">destination)</span>
+                </div>
+                <div class="Explanation">Returns the length of {str}. If the value is a name of a list, it returns the number of items in that list.</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">contains</span><span class="Argument">(</span><span class="Explanation">{str}</span><span class="Argument">, </span><span class="Explanation">{str}</span><span class="Arrow"> => </span><span class="Argument">destination)</span>
+                </div>
+                <div class="Explanation">Checks if the first string has the second one in it. If so, true is returned. If not, false is returned. If the first string is the name of a list, then it will check if the list contains the second string.</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">slice</span><span class="Argument">(</span><span class="Explanation">{str}</span><span class="Argument">, </span><span class="Explanation">{num}</span><span class="Argument">, </span><span class="Explanation">{num}</span><span class="Arrow"> => </span><span class="Argument">destination)</span>
+                </div>
+                <div class="Explanation">Slices {str} starting at the first number and ending at the last. (Inclusive)</div>
+                <div class="WideBreak"></div>
+
+                <span class="White" id="Lists">Lists: </span>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">var</span><span class="Argument">(list_name</span><span class="Operator"> = </span><span class="Argument">[add, some, items, here]</span><span class="Argument">)</span>
+                </div>
+                <div class="Explanation">Creates a list. There can be multiple different types in a list. Since lists are just variables, you can turn them into a variable and vice versa, just by changing its value. Nested lists are not supported.</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">enter</span><span class="Argument">(</span><span class="Explanation">{list}</span><span class="Argument">, </span><span class="Explanation">{num}</span><span class="Argument">, </span><span class="Explanation">{any}</span><span class="Argument">)</span>
+                </div>
+                <div class="Explanation">Adds {any} at index {num} in {list}. If {num} is 0, then {any} is added to the end of {list}.</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">delete</span><span class="Argument">(</span><span class="Explanation">{list}</span><span class="Argument">, </span><span class="Explanation">{num}</span><span class="Argument">)</span>
+                </div>
+                <div class="Explanation">Deletes item {num} of {list}. If {num} is 0, then the whole list is deleted.</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">replace</span><span class="Argument">(</span><span class="Explanation">{list}</span><span class="Argument">, </span><span class="Explanation">{num}</span><span class="Argument">, </span><span class="Explanation">{any}</span><span class="Argument">)</span>
+                </div>
+                <div class="Explanation">Replaces item {num} of {list} with {any}.</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">item</span><span class="Argument">(</span><span class="Explanation">{list}</span><span class="Argument">, </span><span class="Explanation">{num}</span><span class="Arrow"> => </span><span class="Argument">destination)</span>
+                </div>
+                <div class="Explanation">Returns the {num}'th item in {list}. Returns an empty string ("") if the index is invalid.</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">numof</span><span class="Argument">(</span><span class="Explanation">{list}</span><span class="Argument">, </span><span class="Explanation">{str}</span><span class="Arrow"> => </span><span class="Argument">destination)</span>
+                </div>
+                <div class="Explanation">Returns the index of the first instance of {str} in {list}. Returns 0 if the item is not found.</div>
+                <div class="WideBreak"></div>
+
+                <span class="White" id="Files">Files: </span>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">use</span><span class="Argument">(</span><span class="Explanation">{file}</span><span class="Argument">)</span>
+                </div>
+                <div class="Explanation">Imports the variables from another file and allows you to call functions between the main file and the file you just imported. You can only nest calls between files by 1. Extensions are imported and referenced the same way. (See <a class="LinkExtensions" href="extensions.html">Extensions</a> for more information)</div>
+                <div class="WideBreak"></div>
+
+                <span class="White" id="PersistentStorage">Persistent Storage: </span>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">storage</span><span class="Argument">(</span><span class="Explanation">{str}</span><span class="Argument">)</span>
+                </div>
+                <div class="Explanation">References a storage directory for you to save and load to. (Creates a new one called {str} if one doesn't exist) Running storage("clear") clears all directories and cannot be undone. Directories can be swapped using the same command but with a different directory.</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">save</span><span class="Argument">(</span><span class="Explanation">{slot}</span><span class="Argument">, </span><span class="Explanation">{any}</span><span class="Argument">)</span>
+                </div>
+                <div class="Explanation">Stores {any} in {slot} in the chosen directory. There are 100 slots in each directory. These slots persist until storage(clear) is run. They are overridden with a new value if save() is called with the same slot. If you enter an invalid slot, an <a class="LinkErrorGuide" href="errorguide.html">Invalid Save Slot</a> error is thrown.</div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <span class="Keyword">load</span><span class="Argument">(</span><span class="Explanation">{slot}</span><span class="Arrow"> => </span><span class="Argument">destination)</span>
+                </div>
+                <div class="Explanation">Loads the current value of {slot} inside the chosen directory.</div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Places to visit next:</div>
+                <div class="Explanation"><a class="LinkAdvancedTopics" href="advancedtopics.html">Advanced Topics</a></div>
+                <div class="Explanation"><a class="LinkErrorGuide" href="errorguide.html">Error Guide</a></div>
+                <div class="Explanation"><a class="LinkExtensions" href="extensions.html">Extensions</a></div>
+                <div class="Explanation"><a class="LinkExamplePrograms" href="exampleprograms.html">Example Programs</a></div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Change Log - Direct+ Official Documentation</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="ChangeLog">
+        <div class="Text">
+            <div class="Title">
+                <a href="index.html" class="Back">Back</a> 
+                <h1>CHANGE LOG</h1>
+
+                <div class="Explanation">Note: This is just pure versioning information intended for version and compatibility tracking and isn't meant to be learned.</div>
+                <div class="WideBreak"></div>
+
+                <pre class="Gray">
+e = experimental, s = speed/stability, n = new version
+5/2/2026: Updated __listutils and __kvlists extensions to work with the new list system and added automatic filename saving when you save your code so you don't manually have to change it anymore. This new saving system is fully backwards-compatible as well. (v3.20e)
+4/22/2026: Fixed some list packing/unpacking glitches and added a welcome message in the editor. (v3.19e)
+4/18/2026: Lists now work with add/sub/mul/div/mod/sqrt/random commands! (v3.18e)
+4/16/2026: Massively overhauled lists! (v3.17e)
+4/15/2026: Fixed bugs where comments containing commands still executed and the missing termination error not showing up properly. (v3.16s)
+4/14/2026: Fixed a fatal glitch where a command with leading spaces breaks the interpreter. (v3.15e)
+4/12/2026: Fixed variable interpolation for hopefully the last time, so now it correctly echoes back its delimiter. (v3.14e)
+4/11/2026: Improved stack traces and added system variables such as @username and @timer. Also fixed a major variable interpolation bug that broke basically everything involving lists. (v3.13e)
+4/10/2026: Fixed a console coloring glitch after exiting the filesystem. (v3.12s)
+4/4/2026: Fixed a bug where variable interpolation with just one variable and more text didn't automatically add spaces. Marked “e” because this might introduce more bugs with singular variables. (v3.11e)
+3/29/2026: Fixed some glitches with the return system for functions and command outputs not working properly. Also removed the whitespacing rule thing for variable interpolation because it's confusing… Hopefully nothing breaks! (v3.10e)
+3/28/2026: Added colored text in the console, fixed some indentation guide glitches, and added indentation for functions. Also removed list printing since it's too restricted and loops work better. (v3.09e)
+3/24/2026: Added a stack tracing system for debugging. (v3.08e)
+3/22/2026: Fixed a couple of glitches with the filesystem. (v3.07s)
+3/19/2026: Added return values for functions, completing the function system! (v3.06e)
+3/18/2026: Fixed some bugs where variable declarations in functions from other files didn't get automatically namespaced and collisions didn't happen. (v3.05s)
+3/15/2026: Removed extensions due to many reasons, mainly lack of use and instability. Transitioning to a dogfooded module extension system! This will allow for many more extensions. (v3.04e)
+3/14/2026: Added parameterized functions, enabling truly modular code. Also works with multiple files! (v3.03e)
+3/11/2026: Added implicit list and table references. (v3.02e)
+3/10/2026: Added loop counters and fixed break breaking the interpreter, not the loop (whoopsies). (v3.01e)
+3/8/2026: v3.00n RELEASED!
+————————————————–————————————————–
+Added: Shadow Run, Cursor jumping, Keyboard shortcuts, 4-way scrolling,  buttons, Faster optimized render loop
+Removed: Save/load buttons (Can be used through keyboard shortcuts), Implicit variable incrementing + decrementing
+Fixed/Improved: Double variable interpolation, Indentation guides not hiding, Parsing overflow speed upgrade (Doesn't hang as much anymore)
+————————————————–————————————————–
+3/4/2026: Fixed list commands not working with arrow assignment and split copy() into row() and col() commands instead, with arrow assignment support. (v2.60s)
+2/26/2026: Fixed a bug where true if statements inside of loops won't repeat the loop they're in. (v2.59s)
+2/25/2026: Fixed a fatal bug where using break() outside of a loop would crash. Also fixed some other loop-related issues and massively upgraded persistent storage (also decreased slot count to 100 per directory, a much more reasonable and memory-saving amount). (v2.58s)
+2/23/2026: Fixed a glitch with double dereferencing inside of extension commands. (v2.57s)
+2/17/2026: Added the break() command. (v2.56e)
+2/16/2026: Depreciated OOP due to minimal use cases. The dynamic variable creation system and multi-file programs replace OOP and make it better. Also fixed some variable passthrough glitches from multi-file functions. (v2.55s)
+2/15/2026: Added infinite looping support with loop(0). (v2.54s)
+2/9/2026: Added dynamic variable creation and dynamic variable referencing, enabling metaprogramming, linked lists, algorithms, and other cool stuff. (v2.53e)
+2/7/2026: Added variable namespacing rules and simplified object syntax, and made persistent storage larger and more persistent. (v2.52s)
+2/5/2026: Added indentation lines in the text editor. (v2.51s)
+2/1/2026: Added a file manager, multi-file programs, and variable references and run() calls between files! (v2.50e)
+1/31/2026: Added booleans, switching from 1/0 to true/false. (v2.49e)
+1/30/2026: Added arrow assignment support for extension commands, removed math() due to instability, and removed all system variables. (v2.48e)
+1/25/2026: Removed all stylers except %n, fixed some object glitches, and added structured loops. (compatible with nesting!) (v2.47e)
+1/24/2026: Added arrow assignment and removed most system variables and command nesting functionality, dropping 600 blocks. (v2.46e)
+1/23/2026: Added variable incrementing and decrementing using += / -=! (v2.45e)
+1/20/2026: Fixed a huge glitch where in a project with multiple objects, attributes from the second object don't exist. (v2.44s)
+1/19/2026: Fixed a bunch of bugs with the new OOP system. There are still lots of glitches to fix though. (v2.43s)
+1/18/2026: Added singleton object-oriented support and automatic indentation for if statement and loop blocks in the text editor! (v2.42e)
+1/15/2026: Added the math() command. (v2.41e)
+1/14/2026: Added type enforcement for parameters in common commands to improve usability. (v2.40s)
+1/11/2026: Added a true stack for if statements! They now support true nesting. (v2.39e)
+1/10/2026: Added horizontal scrolling support. You can activate this by holding down the backtick (`) key and pressing the scroll up/down buttons located at the top right of the text editor. (v2.38e)
+1/9/2026: Renamed parsefrom() to run() to improve readability and removed sample programs due to syntax changes. (v2.37e)
+1/7/2026: Switched to a more efficient and slightly faster interpreter architecture, lowering block count by 700! Please expect bugs. (v2.36e)
+1/5/2026: Added the copy() command to transfer rows/columns of tables into lists. (v2.35e)
+1/4/2026: Added two-dimensional lists, called tables. (v2.34e)
+1/2/2026: Added a safeguard which throws an error when the same extension is installed multiple times. (v2.33s)
+12/30/2025: Improved invalid extension handling. (v2.32s)
+12/28/2025: Switched over to a comma-based syntax. (v2.31s)
+12/27/2025: Added the system and input extensions. (v2.30e)
+12/26/2025: Added the extensions system!!!! (v2.29e)
+12/25/2025: Fixed a glitch where using paste(text“…”) with variables didn't actually print the text. (v2.28s)
+12/24/2025: Added text stylers. (v2.27e)
+12/23/2025: Sped up and optimized the text editor and added the bullet list formatter. (v2.26s)
+12/22/2025: Added lists and line numbers in the editor! Also fixed paste(input“…”) not working in Turbo Mode. (v2.25e)
+12/21/2025: Added a call stack for parsefrom(), now you can use multiple returns in a row, and added a termination statement. Also removed encode/decode inside of variable commands. The original commands still work. (v2.24e)
+12/20/2025: Fixed some interpreter glitches and sped up the render loop. (v2.23s)
+12/19/2025: Added red highlights for invalid commands in the text editor. A syntax error turns the whole line red. (v2.22e)
+12/18/2025: Benchmarked all basic commands and fixed some smaller bugs. (v2.21s)
+12/17/2025: Added encode() and decode() to convert a string into a numbered value. It's still really slow, and will be sped up in future updates. (v2.20e)
+12/16/2025: Added line previews for errors, making debugging easier. (v2.19e)
+12/15/2025: Added command nesting inside of variables, you can now do things like var(sum = add(1 2))! This only supports 1-level nesting though. (v2.18e)
+12/14/2025: Fixed a glitch where /return makes infinite parsefrom loops that can't be exited, and fixed a timer bug. Added the slice(…) command. (v2.17e)
+12/13/2025: Added persistent storage through saving and loading, with the #load variable. Also added hashing and fixed paste(input“…”) not working inside of if statements. (v2.16e)
+12/10/2025: Fixed an infinite input bug. (v2.15s)
+12/8/2025: Sped up if statements by two times! (v2.14s)
+12/7/2025: Added a compilation timer. (v2.13s)
+12/5/2025: Cleaned up interpreter code. (v2.12s)
+12/4/2025: Reduced sprite count by 1 and updated Direct+ logo. (v2.11s)
+12/3/2025: Sped up if statements and fixed some text editor bugs. (v2.10s)
+12/2/2025: Reduced sprite count by 1 and added a line indicator. (v2.09s)
+12/1/2025: Text editor got a +28fps upgrade in projects longer than one page long! (v2.08s)
+11/30/2025: Bug fixes and optimizations. Removed 1 sprite! (v2.07s)
+11/29/2025: Added support for key presses (removed). (v2.06e)
+11/22/2025: Added UI enhancements and Import and Export. (v2.05e)
+11/20/2025: Massive compilation speed boost! (v2.04e)
+11/19/2025: Added the /return tag for better functions. (v2.03e)
+11/18/25: Added the parsefrom() command and tags, effectively making loops and functions! (v2.02e)
+11/17/25: Added a command to select random numbers. (v2.01s)
+11/16/25: v2.00n RELEASED!
+————————————————–————————————————–
+Added: Console, Better text printing, Input acceptance, New UI, Faster interpreter, New render engine (Faster than v1), Lots of commands
+Removed: Menus, Visual output, Intro
+Fixed/Improved: Variables, Text editor efficiency
+————————————————–————————————————–
+11/13/25: Started work on Version 2.00! (No version)
+10/2/2025: Started the boring optimization process for 2.00. (No version)
+9/29/2025: Added the option to go back in text without deleting previous text. (v1.22e)
+9/28/2025: Resumed Development! (No version)
+9/1/2025: Stopped Development. (No version)
+8/29/2025: Edited the debug bar. (v1.21s)
+8/28/2025: Added the “new” button. (v1.20s)
+8/26/2025: Minor bug fixes. (v1.19s)
+8/24/2025: Added a stop button to manually terminate code when it's running. (v1.18s)
+8/23/2025: Finished variables for all the parameters of the paste-text command. (v1.17s)
+8/20/2025: Fixed a fatal bug. (v1.16e)
+8/16/2025: Fixed even more variable glitches. (v1.15e)
+8/15/2025: Added the debug bar. (v1.14e)
+8/13/2025: Fixed some variable glitches. (v1.13e)
+8/12/2025: Very buggy variables added. (v1.12e)
+8/3/2025: Re-shared with minor updates to prepare for variables. (v1.11s)
+7/16/2025: Updated syntax coloring. (v1.10s)
+7/14/2025: Removed some intro elements. (v1.09s)
+7/12/2025: Removed most menus. (v1.08s)
+7/11/2025: Fixed another UI glitch. (v1.07s)
+7/7/2025: Fixed a UI glitch. (v1.06e)
+7/5/2025: Redesigned UI. Still buggy but it looks better! (v1.05e)
+7/3/2025: Fixed a sound glitch. (v1.04s)
+7/2/2025: Added the play-sound command. (v1.03e, removed in v2)
+7/1/2025: Added the paste-line command and comments. (v1.02e)
+7/1/2025: Updated the intro and command menus. (v1.01s)
+6/30/2025: Official Release! (v1.00n)
+                </pre>
+                <h1>EXTRA STUFF</h1>
+                <pre class="Gray">
+- Built in Scratch with 7,000+ blocks in project
+- 10-26 commands per second in Vanilla Scratch / TurboWarp (30 max due to limitations, command speed may vary by program type)
+- 1,000-9,000 commands per second in Turbo Mode (CPU-bound, expect 1,000-2,000 commands per second for most projects, any more can only be reached through specific use cases)
+                </pre>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
