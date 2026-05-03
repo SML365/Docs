@@ -216,13 +216,12 @@ body
     width: 150px;
     margin: 10px;
 
-    transition: background-color 0.25s ease, width 0.25s ease;
+    transition: background-color 0.25s ease;
 }
 
 .Landing .Text .NavButtons .CommandsListButton:hover
 {
     background-color: #479fe1;
-    width: 170px;
     cursor: pointer;
 }
 
@@ -230,35 +229,30 @@ body
 .Landing .Text .NavButtons .ExtensionsButton:hover
 {
     background-color: #70c501;
-    width: 170px;
     cursor: pointer;
 }
 
 .Landing .Text .NavButtons .ErrorGuideButton:hover
 {
     background-color: #fa5f58;
-    width: 170px;
     cursor: pointer;
 }
 
 .Landing .Text .NavButtons .AdvancedTopicsButton:hover
 {
     background-color: #9a49ec;
-    width: 170px;
     cursor: pointer;
 }
 
 .Landing .Text .NavButtons .ChangeLogButton:hover
 {
     background-color: #f29901;
-    width: 170px;
     cursor: pointer;
 }
 
 .Landing .Text .NavButtons .ProgramsButton:hover
 {
     background-color: #01bf78;
-    width: 170px;
     cursor: pointer;
 }
 
