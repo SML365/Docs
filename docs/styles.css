@@ -345,7 +345,7 @@ body
 
 .ChangeLog .Text .Gray
 {
-    font-size: 10px;
+    font-size: 15px;
 }
 
 /* OTHER CSS THINGS */
@@ -386,4 +386,10 @@ body
     height: 90px;
     margin-bottom: 20px;
     border-radius: 15px;
+}
+
+pre {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    max-width: 100%;
 }
