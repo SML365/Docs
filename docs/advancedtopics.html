@@ -332,11 +332,57 @@
                 </div>
                 <div class="WideBreak"></div>
 
+                <span class="White" id="ListMath">List Math: </span>
+                <div class="Break"></div>
+
+                <div class="Explanation">Direct+ supports math operations on lists through the built in add/sub/mul/div/mod/sqrt/random commands, which also work with numbers.</div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">There are four cases to remember when using list math: </div>
+                <div class="Explanation">1. If both inputs are numbers, the output is a number.</div>
+                <div class="Explanation">2. If both inputs are lists, the output is a list. Each item in the output list is the result of the operation being performed on the corresponding items in the input lists. If the lists are different lengths, then a <a href="errorguide.html" class="LinkErrorGuide">Lists are Different Lengths</a> error will occur.</div>
+                <div class="Explanation">3. If one input is a list and the other is a number, the output is a list. The input number is applied to each item in the list.</div>
+                <div class="Explanation">4. If there's just one input parameter and the input is a list, then the output is a list. The input list is used as the singular input.</div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Examples: </div>
+                <div class="Break"></div>
+
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">(num1<span class="Operator"> = </span>5)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">(num2<span class="Operator"> = </span>10)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">(list1<span class="Operator"> = </span>[5, 10, 15])</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">(list2<span class="Operator"> = </span>[2, 4, 6])</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Keyword">add</span><span class="Argument">(<span class="Variable">@num1</span>, <span class="Variable">@num2</span><span class="Arrow"> => </span><span class="Argument">result)</span><span class="Explanation"> $ 5 + 10 = 15</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">add</span><span class="Argument">(<span class="Variable">@list1</span>, <span class="Variable">@list2</span><span class="Arrow"> => </span><span class="Argument">result)</span><span class="Explanation"> $ [5, 10, 15] + [2, 4, 6] = [7, 14, 21]</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">add</span><span class="Argument">(<span class="Variable">@list1</span>, <span class="Variable">@num1</span><span class="Arrow"> => </span><span class="Argument">result)</span> <span class="Explanation"> $ [5, 10, 15] + 5 = [10, 15, 20] (Alternative parameter order is supported)</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">sqrt</span><span class="Argument">(<span class="Variable">@list1</span><span class="Arrow"> => </span><span class="Argument">result)</span> <span class="Explanation"> $ [5, 10, 15] = [2.236, 3.162, 3.873]</span>
+                    </div>
+                </div>
+                <div class="WideBreak"></div>
+
                 <div class="Explanation">Places to visit next:</div>
                 <div class="Explanation"><a class="Link" href="commandslist.html">Commands List</a></div>
                 <div class="Explanation"><a class="LinkErrorGuide" href="errorguide.html">Error Guide</a></div>
                 <div class="Explanation"><a class="LinkExtensions" href="extensions.html">Extensions</a></div>
                 <div class="Explanation"><a class="LinkExamplePrograms" href="exampleprograms.html">Example Programs</a></div>
+                <div class="WideBreak"></div>
             </div>
         </div>
     </body>
