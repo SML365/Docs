@@ -1,9 +1,14 @@
+const IntroductionButton = document.getElementById('IntroductionButton');
 const CommandsListButton = document.getElementById('CommandsListButton');
 const ExtensionsButton = document.getElementById('ExtensionsButton');
 const ErrorGuideButton = document.getElementById('ErrorGuideButton');
 const AdvancedTopicsButton = document.getElementById('AdvancedTopicsButton');
 const ChangeLogButton = document.getElementById('ChangeLogButton');
 const ExamplesButton = document.getElementById('ExamplesButton');
+
+IntroductionButton.addEventListener('click', function() {
+    window.location.href = "introduction.html";
+});
 
 CommandsListButton.addEventListener('click', function() {
     window.location.href = "commandslist.html";

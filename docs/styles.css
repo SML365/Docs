@@ -129,6 +129,16 @@ body
     background: #1c1c1c;
 }
 
+.LinkIntroduction
+{
+    color: #fa32c8;
+}
+
+.LinkCommandsList
+{
+    color: #479fe1;
+}
+
 .LinkAdvancedTopics
 {
     color: #9a49ec;
@@ -149,6 +159,11 @@ body
     color: #01bf78;
 }
 
+.LinkChangeLog
+{
+    color: #f29901;
+}
+
 .Link
 {
     color: rgb(79, 139, 185);
@@ -160,6 +175,7 @@ body
     font-size: 20px;
 }
 
+.Introduction .Text,
 .CommandsList .Text, 
 .AdvancedTopics .Text,
 .ChangeLog .Text,
@@ -208,7 +224,7 @@ body
     bottom: 20px;
 }
 
-.Landing .Text .NavButtons .CommandsListButton, .Landing .Text .NavButtons .ExtensionsButton, .Landing .Text .NavButtons .ErrorGuideButton, .Landing .Text .NavButtons .AdvancedTopicsButton, .Landing .Text .NavButtons .ChangeLogButton, .Landing .Text .NavButtons .ProgramsButton
+.Landing .Text .NavButtons .IntroductionButton, .Landing .Text .NavButtons .CommandsListButton, .Landing .Text .NavButtons .ExtensionsButton, .Landing .Text .NavButtons .ErrorGuideButton, .Landing .Text .NavButtons .AdvancedTopicsButton, .Landing .Text .NavButtons .ChangeLogButton, .Landing .Text .NavButtons .ProgramsButton
 {
     background-color: #3c3c3c;
     padding: 10px;
@@ -222,6 +238,12 @@ body
     margin: 10px;
 
     transition: background-color 0.25s ease;
+}
+
+.Landing .Text .NavButtons .IntroductionButton:hover
+{
+    background-color: #fa32c8;;
+    cursor: pointer;
 }
 
 .Landing .Text .NavButtons .CommandsListButton:hover
@@ -259,6 +281,14 @@ body
 {
     background-color: #01bf78;
     cursor: pointer;
+}
+
+/* INTRODUCTION.HTML CSS */
+
+.Introduction .Text .Title
+{
+    color: #fa32c8;
+    font-size: 25px;
 }
 
 /* COMMANDSLIST.HTML CSS */
