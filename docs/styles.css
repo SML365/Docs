@@ -173,6 +173,11 @@ body
 
 /* INDEX.HTML CSS */
 
+.Landing
+{
+    margin-top: 100px;
+}
+
 
 .Landing .Text
 {
