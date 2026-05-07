@@ -60,7 +60,7 @@
                                 <span class="Keyword">&ensp;&ensp;add</span><span class="Argument">(</span><span class="Variable">@num1</span><span class="Argument">, </span><span class="Variable">@num2</span><span class="Arrow"> => </span><span class="Argument">result)</span>
                             </div>
                             <div>
-                                <span class="Operator">&gt;&gt;</span>
+                                <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
                             </div>
                         </div>
                         <div class="Break"></div>
@@ -72,7 +72,7 @@
                                 <span class="Keyword">&ensp;&ensp;sub</span><span class="Argument">(</span><span class="Variable">@num1</span><span class="Argument">, </span><span class="Variable">@num2</span><span class="Arrow"> => </span><span class="Argument">result)</span>
                             </div>
                             <div>
-                                <span class="Operator">&gt;&gt;</span>
+                                <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
                             </div>
                         </div>
                         <div class="Break"></div>
@@ -84,7 +84,7 @@
                                 <span class="Keyword">&ensp;&ensp;mul</span><span class="Argument">(</span><span class="Variable">@num1</span><span class="Argument">, </span><span class="Variable">@num2</span><span class="Arrow"> => </span><span class="Argument">result)</span>
                             </div>
                             <div>
-                                <span class="Operator">&gt;&gt;</span>
+                                <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
                             </div>
                         </div>
                         <div class="Break"></div>
@@ -96,7 +96,7 @@
                                 <span class="Keyword">&ensp;&ensp;div</span><span class="Argument">(</span><span class="Variable">@num1</span><span class="Argument">, </span><span class="Variable">@num2</span><span class="Arrow"> => </span><span class="Argument">result)</span>
                             </div>
                             <div>
-                                <span class="Operator">&gt;&gt;</span>
+                                <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
                             </div>
                         </div>
                         <div class="Break"></div>
@@ -146,7 +146,117 @@
                             <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(num2<span class="Operator"> = </span><span class="Variable">@temp</span>)</span>
                         </div>
                         <div>
-                            <span class="Operator">&gt;&gt;</span>
+                            <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
+                        </div>
+                        <div class="Break"></div>
+                        <div>
+                            <span class="Terminator">;</span>
+                        </div>
+                    </div>
+                    <div class="WideBreak"></div>
+
+                    <span class="White" id="Program3">FizzBuzz: </span>
+                    <div class="Break"></div>
+
+                    <div class="CodeBlock">
+                        <div>
+                            <span class="Explanation">$ define variables</span>
+                        </div>
+                        <div>
+                            <span class="Keyword">var</span><span class="Argument">(temp1</span><span class="Argument">)</span>
+                        </div>
+                        <div>
+                            <span class="Keyword">var</span><span class="Argument">(temp2</span><span class="Argument">)</span>
+                        </div>
+                        <div>
+                            <span class="Keyword">var</span><span class="Argument">(comparison_flag</span><span class="Argument">)</span>
+                        </div>
+                        <div class="Break"></div>
+                        <div>
+                            <span class="Explanation">$ loop through numbers 1 to 100 (use built-in loop counter as number index)</span>
+                        </div>
+                        <div>
+                            <span class="Keyword">loop</span><span class="Argument">(100, num) </span><span class="Operator">&lt;&lt;</span>
+                        </div>
+                        <div>
+                            <span class="Keyword">&ensp;&ensp;var</span><span class="Argument">(comparison_flag<span class="Operator"> = </span><span class="Bool">false</span>)</span>
+                        </div>
+                        <div class="Break"></div>
+                        <div>
+                            <span class="Keyword">&ensp;&ensp;mod</span><span class="Argument">(<span class="Variable">@loop:num</span>, 3 <span class="Arrow"> => </span>temp1)</span>
+                        </div>
+                        <div>
+                            <span class="Keyword">&ensp;&ensp;mod</span><span class="Argument">(<span class="Variable">@loop:num</span>, 5 <span class="Arrow"> => </span>temp2)</span>
+                        </div>
+                        <div class="Break"></div>
+                        <div>
+                            <span class="Keyword">&ensp;&ensp;if</span><span class="Argument">(<span class="Variable">@temp1</span><span class="Operator"> == </span>0<span class="Argument">)</span><span class="Operator"> &lt;&lt;</span>
+                        </div>
+                        <div>
+                            <span class="Keyword">&ensp;&ensp;&ensp;&ensp;if</span><span class="Argument">(<span class="Variable">@temp2</span><span class="Operator"> == </span>0<span class="Argument">)</span><span class="Operator"> &lt;&lt;</span>
+                        </div>
+                        <div>
+                            <span class="Keyword">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;var</span><span class="Argument">(comparison_flag<span class="Operator"> = </span><span class="Bool">true</span>)</span>
+                        </div>
+                        <div>
+                            <span class="Keyword">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;paste</span><span class="Argument">(text<span class="String">"fizzbuzz"</span><span class="Argument">)</span>
+                        </div>
+                        <div>
+                            <span class="Operator">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&gt;&gt;</span>
+                        </div>
+                        <div>
+                            <span class="Operator">&ensp;&ensp;&ensp;&ensp;&gt;&gt;</span>
+                        </div>
+                        <div class="Break"></div>
+                        <div> 
+                            <span class="Keyword">&ensp;&ensp;if</span><span class="Argument">(<span class="Variable">@comparison_flag</span><span class="Operator"> == </span><span class="Argument"><span class="Bool">false</span>)</span><span class="Operator"> &lt;&lt;</span>
+                        </div>
+                        <div>
+                            <span class="Keyword">&ensp;&ensp;&ensp;&ensp;if</span><span class="Argument">(<span class="Variable">@temp1</span><span class="Operator"> == </span>0<span class="Argument">)</span><span class="Operator"> &lt;&lt;</span>
+                        </div>
+                        <div>
+                            <span class="Keyword">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;var</span><span class="Argument">(comparison_flag<span class="Operator"> = </span><span class="Bool">true</span>)</span>
+                        </div>
+                        <div>
+                            <span class="Keyword">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;paste</span><span class="Argument">(text<span class="String">"fizz"</span><span class="Argument">)</span>
+                        </div>
+                        <div>
+                            <span class="Operator">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&gt;&gt;</span>
+                        <div>
+                            <span class="Operator">&ensp;&ensp;&ensp;&ensp;&gt;&gt;</span>
+                        </div>
+                        <div class="Break"></div>
+                        <div>
+                            <span class="Keyword">&ensp;&ensp;if</span><span class="Argument">(<span class="Variable">@comparison_flag</span><span class="Operator"> == </span><span class="Argument"><span class="Bool">false</span></span><span class="Argument">)</span><span class="Operator"> &lt;&lt;</span>
+                        </div>
+                        <div>
+                            <span class="Keyword">&ensp;&ensp;&ensp;&ensp;if</span><span class="Argument">(<span class="Variable">@temp2</span><span class="Operator"> == </span>0<span class="Argument">)</span><span class="Operator"> &lt;&lt;</span>
+                        </div>
+                        <div>
+                            <span class="Keyword">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;var</span><span class="Argument">(comparison_flag<span class="Operator"> = </span><span class="Bool">true</span>)</span>
+                        </div>
+                        <div>
+                            <span class="Keyword">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;paste</span><span class="Argument">(text<span class="String">"buzz"</span><span class="Argument">)</span>
+                        </div>
+                        <div>
+                            <span class="Operator">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&gt;&gt;</span>
+                        </div>
+                        <div>
+                            <span class="Operator">&ensp;&ensp;&ensp;&ensp;&gt;&gt;</span>
+                        </div>
+                        <div class="Break"></div>
+                        <div>
+                            <span class="Keyword">&ensp;&ensp;if</span><span class="Argument">(<span class="Variable">@comparison_flag</span><span class="Operator"> == </span><span class="Argument"><span class="Bool">false</span></span><span class="Argument">)</span><span class="Operator"> &lt;&lt;</span>
+                        </div>
+                        <div>
+                            <span class="Keyword">&ensp;&ensp;&ensp;&ensp;paste</span><span class="Argument">(text<span class="String">"<span class="Variable">@loop:num</span>"</span><span class="Argument">)</span>
+                        </div>
+                        <div>
+                            <span class="Operator">&ensp;&ensp;&ensp;&ensp;&gt;&gt;</span>
+                        </div>
+                        <div class="Break"></div>
+                        <div>
+                            <span class="Operator">&ensp;&ensp;&gt;&gt;</span>
                         </div>
                         <div class="Break"></div>
                         <div>
