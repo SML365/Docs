@@ -378,10 +378,129 @@
                 </div>
                 <div class="WideBreak"></div>
 
+                <span class="White" id="BuildingBlocks">Building Blocks</span>
+                <div class="Break"></div>
+
+                <div class="Explanation">Here are just some Direct+ Primitives that can be easily added to your programs so you don't have to think much about how to make a while loop or linked list.</div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">While Loop:</div>
+                <div class="Break"></div>
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Keyword">loop</span><span class="Argument">(0)</span><span class="Operator"> &lt;&lt;</span><span class="Explanation"> $ start with an infinite loop for polling</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;if</span><span class="Argument">(<span class="Explanation">some condition</span>)</span><span class="Operator"> &lt;&lt;</span><span class="Explanation"> $ if some condition is met, break the loop</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">&ensp;&ensp;&ensp;&ensp;break</span><span class="Argument">()</span>
+                    </div>
+                    <div>
+                        <span class="Operator">&ensp;&ensp;&ensp;&ensp;&gt;&gt;</span>
+                    </div>
+                    <div>
+                        <span class="Explanation">&ensp;&ensp;$ add code to do something here (this is the while loop body)</span>
+                    </div>
+                    <div>
+                        <div class="Operator">&ensp;&ensp;&gt;&gt;</div>
+                    </div>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Linked List:</div>
+                <div class="Break"></div>
+                
+                <div class="CodeBlock">
+                    <div class="Explanation">Required Setup: </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Explanation">1. </span><span class="Keyword">var</span><span class="Argument">(temp)</span><span class="Explanation"> $ a temporary variable to hold pointers in /get_pointer</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Explanation">2. </span><span class="Keyword">var</span><span class="Argument">(pointer)</span><span class="Explanation"> $ a variable to hold the result of /get_pointer</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Explanation">3. </span><span class="Keyword">var</span><span class="Argument">(current_node</span><span class="Operator"> = </span><span class="Argument">0)</span><span class="Explanation"> $ the current node in the linked list</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Explanation">4. </span><span class="Label">/get_pointer<span class="Argument">[node]</span></span><span class="Explanation"> $ returns the pointer to the next node</span>
+                    </div>
+                    <span class="Keyword">&ensp;&ensp;&ensp;&ensp;&ensp;item</span><span class="Argument">(<span class="Variable">@get_pointer:node</span>, 2 <span class="Arrow"> =></span> temp)</span>
+                    <div>
+                        <span class="Label">&ensp;&ensp;&ensp;&ensp;&ensp;/return</span><span class="Argument">[<span class="Variable">@temp</span>]</span>
+                    </div>
+                    <div class="Break"></div>
+                    <div>
+                        <span class="Explanation">define variables at the top of your program</span>
+                    </div>
+                    <div>
+                        <span class="Explanation">add the /get_pointer function to the end of your main program after <span class="Terminator">;</span></span>
+                    </div>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Explanation">$ define linked list</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">(head <span class="Operator">=</span> <span class="String">"node1"</span>)</span><span class="Explanation"> $ pointer to the start of the linked list</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">(node1 <span class="Operator">=</span> {<span class="String">"apple"</span>, <span class="String">"node2"</span>})</span><span class="Explanation"> $ first node with a value of "apple" points to node2</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">(node2 <span class="Operator">=</span> {<span class="String">"banana"</span>, <span class="String">"node3"</span>})</span><span class="Explanation"> $ second node with a value of "banana" points to node3</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">(node3 <span class="Operator">=</span> {<span class="String">"cherry"</span>, <span class="String">"node4"</span>})</span><span class="Explanation"> $ third node with a value of "cherry" points to node4</span>
+                    </div>
+                    <div>
+                        <span class="Explanation">etc.</span>
+                    </div>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="CodeBlock">
+                    <div>
+                        <span class="Explanation">$ traverse linked list</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">(current_node <span class="Operator">=</span> <span class="Variable">@head</span>)</span> <span class="Explanation"> $ sets the current node to @head ("node1")</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">item</span><span class="Argument">(<span class="Double">@@current_node</span>, 1 <span class="Arrow"> =></span> dest)</span><span class="Explanation"> $ gets value of the current node</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">run</span><span class="Argument">(<span class="Label">/get_pointer</span>[<span class="Double">@@current_node</span>]<span class="Arrow"> => </span>pointer)</span><span class="Explanation"> $ gets the pointer to the next node</span>
+                    </div>
+                    <div>
+                        <span class="Keyword">var</span><span class="Argument">(current_node <span class="Operator">=</span> <span class="Variable">@pointer</span>)</span> <span class="Explanation"> $ sets the next node to the pointer obtained from /get_pointer</span>
+                    </div>
+                    <div>
+                        <span class="Explanation">etc.</span>
+                    </div>
+                </div>
+                <div class="WideBreak"></div>
+
+                <div class="Explanation">Linked list "shapes": </div>
+                <div class="Explanation">1. Linear linked list: each node points to the next node, and the last node points to null.</div>
+                <div class="Explanation">2. Circular linked list: each node points to the next node, and the last node points to the first node.</div>
+                <div class="Explanation">3. Doubly linked list: each node points to both the previous and next nodes.</div>
+
+                <div class="Break"></div>
+                <div class="Explanation">The /get_pointer function can be modified to support doubly linked lists and other structures.</div>
+                <div class="Explanation">Visit <a class="LinkExamplePrograms" href="exampleprograms.html">Example Programs</a> for a full program with linked lists.</div>
+                <div class="WideBreak"></div>  
+
                 <div class="Explanation">Places to visit next:</div>
                 <div class="Explanation"><a class="LinkErrorGuide" href="errorguide.html">Error Guide</a></div>
                 <div class="Explanation"><a class="LinkExtensions" href="extensions.html">Extensions</a></div>
-                <div class="Explanation"><a class="LinkExamplePrograms" href="exampleprograms.html">Example Programs</a></div>
+                <div class="Explanation"><a class="LinkExamplePrograms" href="exampleprograms.html#LinkedList">Example Programs</a></div>
                 <div class="WideBreak"></div>
             </div>
         </div>
